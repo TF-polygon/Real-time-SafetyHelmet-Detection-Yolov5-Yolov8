@@ -50,7 +50,7 @@ After training is complete, a directory named `runs` is created within the `yolo
 ```
 python detect.py --source=data\images\train\img.jpg --weights=runs\train\expN\weights\best.pt --img 640 --conf 0.5 --save-txt
 ```
-|Parameters|Detail|
+|Parameters|Details|
 |------|---|
 |--source|image you want to infer|
 |--img|Size of the image input to the network|
