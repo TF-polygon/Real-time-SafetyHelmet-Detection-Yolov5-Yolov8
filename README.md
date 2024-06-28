@@ -43,6 +43,7 @@ The training environment was Anaconda prompt, and the training was performed wit
 ```
 python train.py --image 640 --batch 16 --epochs 50 --data data/data.yaml --cfg models/yolov5s.yaml -- weights weights/yolov5s.pt --device 0
 ```
+
 # Inference
 
 After training is complete, a directory named `runs` is created within the `yolov5` directory. Inside the `yolov5/runs/train/` path, directories such as `exp1`, `exp2`, etc., are generated for each training session. The `weight/best.pt` file in the latest folder can be used as the weight file for inference.
@@ -94,6 +95,7 @@ The most crucial aspect of this project is demonstrating that it is possible to 
 ## Virtual Environment Setup for Experiment
 Create a virtual environment
 ```
+# Anaconda Prompt
 conda create -n [venv name] python=necessary_version
 ```
 Connect the virtual environment
@@ -102,10 +104,11 @@ conda activate [venv name]
 ```
 In case it causes pip error in virtual environment
 ```
+pip install [package]
 Unable ~ processing Path\python.exe
 ```
 - It's because of collision between base and virtual environment.
-- should delete pip environment variable of base and use virtual environment's pip.
+- you should delete pip environment variable of base and use virtual environment's pip.
 
 ## Dependencies
 ```
