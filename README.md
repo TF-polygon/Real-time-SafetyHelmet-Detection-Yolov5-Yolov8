@@ -57,7 +57,7 @@ python detect.py --source=data\images\train\img.jpg --weights=runs\train\expN\we
 |--batch|Batch size|
 |--epochs|Number of epochs|
 |--weights|Pre-trained model for transfer leraning (e.f., specifying 'yolov5s.pt' will automatically download the model)|
-|--name|Nmae under which the trained model will be saved|
+|--name|Name under which the trained model will be saved|
 
 <br>
 
