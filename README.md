@@ -108,7 +108,7 @@ pip install [package]
 Unable ~ processing Path\python.exe
 ```
 - It's because of collision between base and virtual environment.
-- you should delete pip environment variable of base and use virtual environment's pip.
+- You should delete pip environment variable of base and use virtual environment's pip.
 
 ## Dependencies
 ```
@@ -117,8 +117,8 @@ CUDNN 9.1
 Python 3.12.3
 ```
 ```
-torch, torchaudio 2.3.1+cu118
-torchaudio 0.18.1+cu118
+torch torchaudio 2.3.1+cu118
+torchvision 0.18.1+cu118
 ultralytics 8.2.28
 opencv-python 4.10.0.82
 tensorboard 2.16.2
