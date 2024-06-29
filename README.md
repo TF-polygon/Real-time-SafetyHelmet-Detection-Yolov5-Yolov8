@@ -24,7 +24,7 @@ with open(os.path.join(roo_path, 'train.txt'), 'w') as f:
 with open(os.path.join(roo_path, 'valid.txt'), 'w') as f:
 ...
 ```
-You can refer to the sources of the datasets used for training in the README.dataset.txt and README.roboflow.txt files. We apologize for not being able to include the datasets in the project due to storage limitations.
+You can refer to the sources of the datasets used for training in the `README.dataset.txt` and `README.roboflow.txt` files. We apologize for not being able to include the datasets in the project due to storage limitations.
 ```
 # train.txt
 /absolute/path/to/dataset1.jpg
