@@ -73,14 +73,25 @@ Speed: 0.0ms pre-process, 6.0ms inference, 54.7ms NMS per image at shape (1, 3, 
 Results saved to runs\detect\exp
 1 labels saved to runs\detect\exp\labels
 ```
-<img src="https://github.com/TF-polygon/SPH-Collision-Detection/assets/111733156/d3a990ee-ce89-4b22-95c7-cce87fc023cb" style="height: 400px;"><br>
-- It can be confirmed that real-time object detection is possible through learned data using a simple webcam that can be easily connected to a PC.<br><br>
-<img src="https://github.com/TF-polygon/SPH-Collision-Detection/assets/111733156/b9fe0d99-8376-4410-9d5d-8647ec067e8b">
+<p align="center">
+  <img src="https://github.com/TF-polygon/SPH-Collision-Detection/assets/111733156/d3a990ee-ce89-4b22-95c7-cce87fc023cb" style="height: 400px;"><br>
+  <img src="https://github.com/TF-polygon/Real-time-SafetyHelmet-Detection-Yolov5-Yolov8/assets/111733156/fddcb3ec-589a-454f-9949-293ebacf2473">
+</p> <br>
+ It can be confirmed that real-time object detection is possible through learned data using a simple webcam that can be easily connected to a PC. At the time of taking the photo, I was not wearing any detectable equipment such as a helmet or mask, so I can confirm that classes such as No-Helmet and No-Mask were detected. <br><br>
 
-<img src="https://github.com/TF-polygon/SPH-Collision-Detection/assets/111733156/102631b9-300f-4a05-a082-11d39c5a8d53"> <br>
 
-- F1-Confidence Curve Comparison (value range: 0.0~1.0)<br>
-The results showed that model v8 produced slightly better outcomes compared to model v5, with only a marginal difference. This similarity in results can be attributed to the fact that v8 is a modified version of v5, with approximately five key alterations such as module changes, backbone modifications, addition/removal of convolutional layers, changes in convolutional layer size, and separation of the head module.
+<img src="https://github.com/TF-polygon/Real-time-SafetyHelmet-Detection-Yolov5-Yolov8/assets/111733156/23c28d99-4c5a-46af-9f17-4f1ff3a7026e" style="height: 600px width: 600px"> <br>
+
+- <b>mAP (Mean Average Precision) 50 Comparison </b><br>
+In the case of YOLO v5 (pictured above), you can see results showing high performance equivalent to 80%. However, although YOLO v8 (pictured below) is a higher version, it is confirmed to have a relatively low result value as it does not reach 80%. <br>
+
+- <b>mAP 50:95 Comparison </b><br>
+When using the YOLO v5 (pictured above) model, the mAP 50:95 curve steadily increases, resulting in approximately 50%, and in the case of YOLO v8 (pictured below), performance increases relatively steadily, reaching 40%. It shows decent performance of close to 50%. The evaluation index confirmed similar results for the two models. <br>
+
+<img src="https://github.com/TF-polygon/Real-time-SafetyHelmet-Detection-Yolov5-Yolov8/assets/111733156/80f8d13c-8fca-448d-9c95-b32d3aecccd0" style="height: 1000px width: 600px"> <br>
+
+- <b>F1-Confidence Curve Comparison (value range: 0.0~1.0) </b><br>
+The results showed that model YOLOv8 (pictured right) produced slightly better outcomes compared to model YOLOv5 (pictured left), with only a marginal difference. <br>This similarity in results can be attributed to the fact that YOLOv8 is a modified version of v5, with approximately five key alterations such as module changes, backbone modifications, addition/removal of convolutional layers, changes in convolutional layer size, and separation of the head module.
 
 # Conclusion
 ### Model Comparison
