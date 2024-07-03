@@ -42,14 +42,14 @@ val: data/valid.txt
 # Train
 The training environment was Anaconda prompt, and the training was performed within that environment after building a virtual environment. Accelerated training processing speed using GPU. Detailed instructions on enabling GPU acceleration are provided in the 'Dependencies' section.
 ```
-python train.py --image 640 --batch 16 --epochs 50 --data data/data.yaml --cfg models/yolov5s.yaml -- weights weights/yolov5s.pt --device 0
+(venv) C:path>python train.py --image 640 --batch 16 --epochs 50 --data data/data.yaml --cfg models/yolov5s.yaml -- weights weights/yolov5s.pt --device 0
 ```
 
 # Inference
 
 After training is complete, a directory named `runs` is created within the `yolov5` directory. Inside the `yolov5/runs/train/` path, directories such as `exp1`, `exp2`, etc., are generated for each training session. The `weight/best.pt` file in the latest folder can be used as the weight file for inference.
 ```
-python detect.py --source=data\images\train\img.jpg --weights=runs\train\expN\weights\best.pt --img 640 --conf 0.5 --save-txt
+(venv) C:path>python detect.py --source=data\images\train\img.jpg --weights=runs\train\expN\weights\best.pt --img 640 --conf 0.5 --save-txt
 ```
 |Parameters|Details|
 |------|---|
@@ -108,15 +108,16 @@ The most crucial aspect of this project is demonstrating that it is possible to 
 Create a virtual environment
 ```
 # Anaconda Prompt
-conda create -n [venv name] python=necessary_version
+(base) C:path>conda create -n [venv name] python=necessary_version
 ```
 Connect the virtual environment
 ```
-conda activate [venv name]
+(base) C:path>conda activate [venv name]
+(venv) C:path>
 ```
 In case it causes pip error in virtual environment
 ```
-pip install [package]
+(venv) C:path>pip install [package]
 Unable ~ processing Path\python.exe
 ```
 - It's because of collision between base and virtual environment.
