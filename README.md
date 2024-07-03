@@ -19,9 +19,9 @@ file_path = os.path.join(root_path, 'images/train')
 valid_path = os.path.join(root_path, 'images/val')
 
 
-with open(os.path.join(roo_path, 'train.txt'), 'w') as f:
+with open(os.path.join(root_path, 'train.txt'), 'w') as f:
 ...
-with open(os.path.join(roo_path, 'valid.txt'), 'w') as f:
+with open(os.path.join(root_path, 'valid.txt'), 'w') as f:
 ...
 ```
 You can refer to the sources of the datasets used for training in the `README.dataset.txt` and `README.roboflow.txt` files. We apologize for not being able to include the datasets in the project due to storage limitations.
@@ -135,6 +135,10 @@ ultralytics 8.2.28
 opencv-python 4.10.0.82
 tensorboard 2.16.2
 tensorflow 2.16.1
+```
+```
+CPU Intel(R) Core(TM) i7-8700K
+GPU NVIDIA GeForce RTX 2070 SUPER
 ```
 
 ### Reference
