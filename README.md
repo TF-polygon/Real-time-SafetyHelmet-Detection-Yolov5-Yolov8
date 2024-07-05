@@ -11,7 +11,22 @@ We will train both models using the same custom dataset and compare their evalua
 
 To train the models with the custom dataset, we first need to accurately specify the path to the custom dataset in the YAML file.
 ### file_path.py
-List the datasets to be used for training in a text file with their absolute paths.
+List the datasets to be used for training as a text file with their absolute paths. To do this, the dataset must be placed as shown in the tree structure below.
+```
+yolov5
+├── data
+|   └── images
+|       ├── train
+|       └── val
+|   └── labels
+|       ├── train
+|       └── val
+├── models
+├── runs
+├── segment
+├── utils
+├── weight
+```
 ```
 root_path = ''		#path of root
 
