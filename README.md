@@ -90,23 +90,31 @@ Results saved to runs\detect\exp
 ```
 <p align="center">
   <img src="https://github.com/TF-polygon/SPH-Collision-Detection/assets/111733156/d3a990ee-ce89-4b22-95c7-cce87fc023cb" style="height: 400px;"><br>
+  <b>Figure 1.</b> An inference result using specific image in the dataset for training. <br><br>
   <img src="https://github.com/TF-polygon/Real-time-SafetyHelmet-Detection-Yolov5-Yolov8/assets/111733156/fddcb3ec-589a-454f-9949-293ebacf2473">
-</p> <br>
- It can be confirmed that real-time object detection is possible through learned data using a simple webcam that can be easily connected to a PC. At the time of taking the photo, I was not wearing any detectable equipment such as a helmet or mask, so I can confirm that classes such as No-Helmet and No-Mask were detected. <br><br>
+  <b>Figure 2.</b> The result for real-time detection using Webcam. It can be confirmed that real-time object detection is possible through learned data using a simple webcam that can be easily connected to a PC.
+</p>
+ At the time of taking the photo, I was not wearing any detectable equipment such as a helmet or mask, so I can confirm that classes such as No-Helmet and No-Mask were detected. <br><br>
 
-
-<img src="https://github.com/TF-polygon/Real-time-SafetyHelmet-Detection-Yolov5-Yolov8/assets/111733156/23c28d99-4c5a-46af-9f17-4f1ff3a7026e" style="height: 600px width: 600px"> <br>
+<p align="center">
+  <img src="https://github.com/TF-polygon/Real-time-SafetyHelmet-Detection-Yolov5-Yolov8/assets/111733156/23c28d99-4c5a-46af-9f17-4f1ff3a7026e" style="height: 600px width: 600px">
+  <b>Figure 3.</b> Comparison of results of evaluation indicators about YOLOv5 (pictured above) and YOLOv8 (pictured below).
+</p>
 
 - <b>mAP (Mean Average Precision) 50 Comparison </b><br>
-In the case of YOLO v5 (pictured above), you can see results showing high performance equivalent to 80%. However, although YOLO v8 (pictured below) is a higher version, it is confirmed to have a relatively low result value as it does not reach 80%. <br>
+In the case of YOLO v5, you can see results showing high performance equivalent to 80%. However, although YOLO v8 is a higher version, it is confirmed to have a relatively low result value as it does not reach 80%. <br>
 
 - <b>mAP 50:95 Comparison </b><br>
-When using the YOLO v5 (pictured above) model, the mAP 50:95 curve steadily increases, resulting in approximately 50%, and in the case of YOLO v8 (pictured below), performance increases relatively steadily, reaching 40%. It shows decent performance of close to 50%. The evaluation index confirmed similar results for the two models. <br>
+When using the YOLO v5 model, the mAP 50:95 curve steadily increases, resulting in approximately 50%, and in the case of YOLO v8, performance increases relatively steadily, reaching 40%. It shows decent performance of close to 50%. The evaluation index confirmed similar results for the two models. <br>
 
-<img src="https://github.com/TF-polygon/Real-time-SafetyHelmet-Detection-Yolov5-Yolov8/assets/111733156/80f8d13c-8fca-448d-9c95-b32d3aecccd0" style="height: 1000px width: 600px"> <br>
+<p align="center">
+  <img src="https://github.com/TF-polygon/Real-time-SafetyHelmet-Detection-Yolov5-Yolov8/assets/111733156/80f8d13c-8fca-448d-9c95-b32d3aecccd0" style="height: 1000px width: 600px"> 
+  <b>Figure 4.</b> Comparison of F1-score indicator about YOLOv5 (pictured left) and YOLOv8 (pictured right)
+  <br>
+</p>
 
 - <b>F1-Confidence Curve Comparison (value range: 0.0~1.0) </b><br>
-The results showed that model YOLOv8 (pictured right) produced slightly better outcomes compared to model YOLOv5 (pictured left), with only a marginal difference. <br>This similarity in results can be attributed to the fact that YOLOv8 is a modified version of v5, with approximately five key alterations such as module changes, backbone modifications, addition/removal of convolutional layers, changes in convolutional layer size, and separation of the head module.
+The results showed that model YOLOv8 produced slightly better outcomes compared to model YOLOv5, with only a marginal difference. <br>This similarity in results can be attributed to the fact that YOLOv8 is a modified version of v5, with approximately five key alterations such as module changes, backbone modifications, addition/removal of convolutional layers, changes in convolutional layer size, and separation of the head module.
 
 # Conclusion
 ### Model Comparison
@@ -117,7 +125,7 @@ The most crucial aspect of this project is demonstrating that it is possible to 
 
 ### Future Applications
 - Developing domain expansion models using the YOLO model.<br>
-- As of now (as of 6/11), version upgrades have reached v10, suggesting that future models with even better performance can be trained and used with smaller datasets.
+- As of now (as of 6/11), version upgrades have reached v10, suggesting that future models with even better performance can be trained and used with smaller datasets. <br><br><br>
 
 ## Virtual Environment Setup for Experiment
 Create a virtual environment
