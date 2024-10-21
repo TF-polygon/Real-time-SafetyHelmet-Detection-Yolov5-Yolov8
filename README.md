@@ -6,7 +6,7 @@ The use of helmets in industrial settings is one of the most crucial factors dir
 - YOLOv5
 - YOLOv8 (To be uploaded)
 
-Please note that the following contents only contain environment settings and explanations based on the YOLOv5 model, considering that the contents of the YOLOv8 model have not been uploaded yet.<br><br>
+~~Please note that the following contents only contain environment settings and explanations based on the YOLOv5 model, considering that the contents of the YOLOv8 model have not been uploaded yet.~~<br><br>
 We will train both models using the same custom dataset and compare their evaluation metrics to determine which model is more suitable for use in an actual industrial setting.
 
 To train the models with the custom dataset, we first need to accurately specify the path to the custom dataset in the YAML file.
@@ -27,7 +27,7 @@ yolov5
 ├── utils
 ├── weight
 ```
-```
+```python
 root_path = ''		#path of root
 
 file_path = os.path.join(root_path, 'images/train')
@@ -54,12 +54,56 @@ This allows the YOLO model to easily locate the training datasets. Once the list
 train: data/train.txt
 val: data/valid.txt
 ```
+
+In case of YOLOv8, It's different to set paths of datasets for training compared YOLOv5. For example, in case of YOLOv5, while the path of dataset begins to a directory named `images`, YOLOv8 begins to a directory named `train`, `valid`, `test`. They have directories `images` and `labels` unlike YOLOv5. So, if you want to use an YOLOv8 model, you should make sure a path of dataset like under example. And, YOLOv8 sets automatically path of dataset to `datasets`. So if you want to manage datasets for training in the directory `yolov8`, you should make sure the name of directory whether its name is `datasets`.
+```
+yolov8
+├── datasets
+|   └── train
+|       ├── images
+|       └── labels
+|   └── valid
+|       ├── images
+|       └── labels
+|   └── test
+|       ├── images
+|       └── labels
+├── models
+├── runs
+├── weight
+```
+
 # Train
-The training environment was Anaconda prompt, and the training was performed within that environment after building a virtual environment. Accelerated training processing speed using GPU. Detailed instructions on enabling GPU acceleration are provided in the 'Dependencies' section.
+The training environment of YOLOv5 we did was Anaconda prompt, and the training was performed within that environment after building a virtual environment. Accelerated training processing speed using GPU. Detailed instructions on enabling GPU acceleration are provided in the 'Dependencies' section.
 ```
 (venv) C:path>python train.py --image 640 --batch 16 --epochs 50 --data data/data.yaml --cfg models/yolov5s.yaml -- weights weights/yolov5s.pt --device 0
 ```
+The training environment of YOLOv8 we did was Jupyter. Unlike YOLOv5, we didn't use Anaconda prompt because ultralytics provides users with good compatibility and importing. You can easilty train the custom weight model as follow under example. First, you should make sure requirements for custom training in Jupyter. That information behind 'Setup complete ✅' is the specification of this experimental environment.
+```python
+%pip install ultralytics supervision roboflow
+import ultralytics
+ultralytics.checks()
+```
+```
+Ultralytics 8.3.18  Python-3.12.3 torch-2.3.1+cu118 CUDA:0 (NVIDIA GeForce RTX 2070 SUPER, 8192MiB)
+Setup complete ✅(12 CPUs, 15.9 GB RAM, 407.6/488.4 GB disk)
+```
+After this, you can train the model using custom dataset by coding next example. Before running the code, you should make sure the file `data.yaml`. The file details should be changed about the custom dataset. And, in next section, we'll simply describe hyperparameters what they are, how we can use.
+```python
+from ultralytics import YOLO
 
+model = YOLO("yolov8n.yaml")
+model = YOLO("yolov8n.pt")
+
+results = model.train(
+    data="datasets/data.yaml",
+    epochs=30,
+    imgsz=640,
+    batch=16,
+    device=0,
+    )
+
+```
 # Inference
 
 After training is complete, a directory named `runs` is created within the `yolov5` directory. Inside the `yolov5/runs/train/` path, directories such as `exp1`, `exp2`, etc., are generated for each training session. The `weight/best.pt` file in the latest folder can be used as the weight file for inference.
@@ -72,7 +116,7 @@ After training is complete, a directory named `runs` is created within the `yolo
 |--img|Size of the image input to the network|
 |--batch|Batch size|
 |--epochs|Number of epochs|
-|--weights|Pre-trained model for transfer leraning (e.f., specifying 'yolov5s.pt' will automatically download the model)|
+|--weights|Pre-trained weight file for custom training (e.f., specifying 'yolov5s.pt' will automatically download the model)|
 |--name|Name under which the trained model will be saved|
 
 <br>
