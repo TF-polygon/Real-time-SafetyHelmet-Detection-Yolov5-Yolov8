@@ -4,7 +4,7 @@ The use of helmets in industrial settings is one of the most crucial factors dir
 
 ## Used model version
 - YOLOv5
-- YOLOv8 (To be uploaded)
+- YOLOv8
 
 ~~Please note that the following contents only contain environment settings and explanations based on the YOLOv5 model, considering that the contents of the YOLOv8 model have not been uploaded yet.~~<br><br>
 We will train both models using the same custom dataset and compare their evaluation metrics to determine which model is more suitable for use in an actual industrial setting.
